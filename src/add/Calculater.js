@@ -31,25 +31,104 @@ sub = () => {
     isaret: "-",
   })
 }
+
 sayı_1 = () => {
-  if(this.state.num1 == 0 && this.state.isaret == null){
-  this.setState({
-      num1: 1,
-  })
-}else {
-  this.setState({
-    num2: 1,
-    })
-  }
+      if(this.state.num1 == 0 || this.state.isaret == null){
+          this.setState({
+            num1: numbers[index],
+          })
+      }else {
+        this.setState({
+          num2: numbers,
+        })
+      }
 }
+
 sayı_2 = () => {
-  if(this.state.num1 == 0 && this.state.isaret == null){
+  if(this.state.num1 == 0 || this.state.isaret == null){
     this.setState({
       num1: 2,
     })
   }else {
     this.setState({
       num2: 2,
+    })
+  }
+}
+sayı_3 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 3
+    })
+  }else {
+    this.setState({
+      num2: 3,
+    })
+  }
+}
+sayı_4 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 4
+    })
+  }else {
+    this.setState({
+      num2: 4,
+    })
+  }
+}
+sayı_5 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 5
+    })
+  }else {
+    this.setState({
+      num2: 5,
+    })
+  }
+}
+sayı_6 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 6
+    })
+  }else {
+    this.setState({
+      num2: 6,
+    })
+  }
+}
+sayı_7 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 7
+    })
+  }else {
+    this.setState({
+      num2: 7,
+    })
+  }
+}
+sayı_8 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 8
+    })
+  }else {
+    this.setState({
+      num2: 8,
+    })
+  }
+}
+sayı_9 = () => {
+  if(this.state.num1 == 0 || this.state.isaret == null){
+    this.setState({
+      num1: 9
+    })
+  }else {
+    this.setState({
+      num2: 9,
     })
   }
 }
@@ -79,32 +158,73 @@ clear = () => {
             <Text style={styles.textNum1}>{this.state.isaret}</Text>
             <Text style={styles.textNum1}>{this.state.num2}</Text>
           </View>
-          <ButtonComp
-           title="1"
-           onPress={this.sayı_1}
-           text="1">
-           </ButtonComp>
-           <ButtonComp
-            title="2"
-            onPress={this.sayı_2}
-            text="2">
-            </ButtonComp>
+          <View style={styles.sayilarText}>
             <ButtonComp
-             title="Clear"
-             onPress={this.clear}
-             text="Clear">
-            </ButtonComp>
-            <View style={styles.buttonstyle}>
-            <ButtonComp
-             title="Tıkla"
-             onPress={this.add}
-             text="+">
+             title="1"
+             onPress={this.sayı_1}
+             text="1">
              </ButtonComp>
              <ButtonComp
-              title="Tıkla"
-              onPress={this.sub}
-              text="-">
+              title="2"
+              onPress={this.sayı_2}
+              text="2">
               </ButtonComp>
+              <ButtonComp
+               title="3"
+               onPress={this.sayı_3}
+               text="3">
+               </ButtonComp>
+             </View>
+             <View style={styles.sayilarText}>
+               <ButtonComp
+                title="4"
+                onPress={this.sayı_4}
+                text="4">
+                </ButtonComp>
+                <ButtonComp
+                 title="5"
+                 onPress={this.sayı_5}
+                 text="5">
+                 </ButtonComp>
+                 <ButtonComp
+                  title="6"
+                  onPress={this.sayı_6}
+                  text="6">
+                  </ButtonComp>
+                </View>
+                <View style={styles.sayilarText}>
+                  <ButtonComp
+                   title="7"
+                   onPress={this.sayı_7}
+                   text="7">
+                   </ButtonComp>
+                   <ButtonComp
+                    title="8"
+                    onPress={this.sayı_8}
+                    text="8">
+                    </ButtonComp>
+                    <ButtonComp
+                     title="9"
+                     onPress={this.sayı_9}
+                     text="9">
+                     </ButtonComp>
+                   </View>
+                <ButtonComp
+                 title="Clear"
+                 onPress={this.clear}
+                 text="Clear">
+                </ButtonComp>
+            <View style={styles.buttonstyle}>
+              <ButtonComp
+               title="Tıkla"
+               onPress={this.add}
+               text="+">
+               </ButtonComp>
+               <ButtonComp
+                title="Tıkla"
+                onPress={this.sub}
+                text="-">
+                </ButtonComp>
               <Text>{this.state.total}</Text>
             </View>
       </View>
@@ -113,10 +233,15 @@ clear = () => {
 }
 const styles = StyleSheet.create({
   buttonstyle: {
-    flex:8,
+    flex:5,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row'
+  },
+  sayilarText: {
+    flexDirection: 'row',
+    padding: 5,
+
   },
   textınput: {
     flex:2,
