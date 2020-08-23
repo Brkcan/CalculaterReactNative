@@ -1,16 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Alert } from 'react-native';
+import ButtonComp from './src/component/ButtonComp';
+import Calculater from './src/add/Calculater';
 
-export default function App() {
+class App extends React.Component{
+
+ createPress = () =>
+Alert.alert(
+     "Alert Title",
+     "My Alert Msg",
+     [
+       {
+         text: "Cancel",
+         onPress: () => console.log("Cancel Pressed"),
+         style: "cancel"
+       },
+       { text: "OK", onPress: () => console.log("OK Pressed") }
+     ],
+     { cancelable: false }
+   );
+
+  render () {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text></Text>
+      <Calculater />
     </View>
   );
 }
-
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,3 +38,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
